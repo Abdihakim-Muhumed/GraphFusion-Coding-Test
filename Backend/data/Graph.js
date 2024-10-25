@@ -10,6 +10,7 @@ class Graph {
     addNode(id, name, type){
         const node = new Node(id, name, type)
         this.nodes.push(node)
+        return node
     }
 
     addRelation(from, to, type){
@@ -20,6 +21,7 @@ class Graph {
         }
         const relation = new Relation(from, to, type)
         this.relations.push(relation)
+        return relation
     }
 }
 
