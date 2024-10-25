@@ -1,0 +1,15 @@
+{
+  "name": "graphfusion-backend",
+  "version": "1.0.0",
+  "description": "The backend for GraphFusion a minimal dynamic knowledge graph application where users can input nodes and relationships, and visualize the graph in real-time.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdihakim Muhumed",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1"
+  }
+}
