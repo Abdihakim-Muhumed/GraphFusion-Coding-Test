@@ -1,5 +1,5 @@
-const Node = require('Node.js')
-const Relation  = require('Require.js')
+const Node = require('./Node.js')
+const Relation  = require('./Relation.js')
 
 class Graph {
     constructor(){
@@ -14,9 +14,9 @@ class Graph {
     }
 
     addRelation(from, to, type){
-        const from = this.nodes.find(node => node.id == from)
-        const to = this.nodes.find(node => node.id == to)
-        if(!from && !to){
+        const fromNode = this.nodes.find(node => node.id == from)
+        const toNode = this.nodes.find(node => node.id == to)
+        if(!fromNode && !toNode){
             throw new Error('Invalid node id!')
         }
         const relation = new Relation(from, to, type)

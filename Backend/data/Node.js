@@ -4,12 +4,6 @@ class Node{
         this.name = name
         this.type = type
     }
-
-    update(name, type){
-        this.name = name
-        this.type = type
-    }
-
 }
 
 module.exports = Node
