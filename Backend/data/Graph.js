@@ -22,7 +22,6 @@ class Graph {
         const fromNode = this.nodes.find(node => node.id == from)
         const toNode = this.nodes.find(node => node.id == to)
         if(!fromNode || !toNode){
-            console.log('atleast one node not found!')
             throw new Error('Invalid node id!')
         }
         else{
