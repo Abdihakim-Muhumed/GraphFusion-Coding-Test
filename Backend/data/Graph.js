@@ -7,21 +7,29 @@ class Graph {
         this.relations = []
     }
 
-    addNode(id, name, type){
-        const node = new Node(id, name, type)
-        this.nodes.push(node)
-        return node
+    addNode(name, type){
+        const checkNode = this.nodes.find(node => node.name == name && node.type ==type)
+        if(!checkNode){
+            const id = this.nodes.length + 1 
+            const node = new Node(id, name, type)
+            this.nodes.push(node)
+            return node
+        }
+        throw new Error('Node already exists!')
     }
 
     addRelation(from, to, type){
         const fromNode = this.nodes.find(node => node.id == from)
         const toNode = this.nodes.find(node => node.id == to)
-        if(!fromNode && !toNode){
+        if(!fromNode || !toNode){
+            console.log('atleast one node not found!')
             throw new Error('Invalid node id!')
         }
-        const relation = new Relation(from, to, type)
-        this.relations.push(relation)
-        return relation
+        else{
+            const relation = new Relation(from, to, type)
+            this.relations.push(relation)
+            return relation
+        }
     }
 }
 
